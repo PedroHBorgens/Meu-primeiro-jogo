@@ -1,0 +1,12 @@
+node_modules/
+.DS_Store
+*.log
+# Nunca versionar segredos ou certificados
+.env
+.env.*
+*.keystore
+*.jks
+*.p12
+*.pem
+*.key
+*.mobileprovision

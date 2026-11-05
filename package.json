@@ -1,0 +1,11 @@
+{
+  "name": "trinca",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Trinca! – jogo de quebra-cabeça: junte 3 formas iguais para explodir.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "start": "python3 -m http.server 8080"
+  }
+}

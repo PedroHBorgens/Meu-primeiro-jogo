@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <!-- Segurança: só carrega arquivos do próprio site. Nenhum script, fonte ou rastreador externo. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; manifest-src 'self'; worker-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#1e1b4b">
+  <meta name="description" content="Trinca! Junte 3 formas iguais para explodir. Jogo de quebra-cabeça simples para todas as idades.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Trinca!">
+  <title>Trinca!</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="hud">
+      <div class="stat"><span class="label">Pontos</span><span id="score" class="value">0</span></div>
+      <div class="stat"><span class="label">Nível</span><span id="level" class="value">1</span></div>
+      <div class="stat"><span class="label">Recorde</span><span id="best" class="value">0</span></div>
+      <div class="stat next"><span class="label">Próxima</span><canvas id="next" aria-label="Próxima peça"></canvas></div>
+      <div class="hud-buttons">
+        <button id="btn-sound" class="icon-btn" type="button" aria-label="Desligar som">🔊</button>
+        <button id="btn-pause" class="icon-btn" type="button" aria-label="Pausar">⏸</button>
+      </div>
+    </header>
+
+    <section id="board-wrap" class="board-wrap">
+      <canvas id="board" aria-label="Tabuleiro do jogo"></canvas>
+      <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+      <div id="overlay" class="overlay">
+        <div class="card">
+          <h1 id="overlay-title">Trinca!</h1>
+          <p id="overlay-text">Junte 3 formas iguais em linha (deitado, em pé ou na diagonal) para explodir e ganhar pontos.</p>
+          <ul class="help">
+            <li><b>Computador:</b> ← → move · ↑ gira · ↓ desce · Espaço derruba · P pausa</li>
+            <li><b>Celular:</b> arraste para os lados · toque para girar · deslize para baixo para derrubar</li>
+          </ul>
+          <button id="btn-start" class="primary" type="button">Jogar</button>
+        </div>
+      </div>
+    </section>
+
+    <nav class="touch-controls" aria-label="Controles">
+      <button type="button" data-action="left" aria-label="Mover para a esquerda">◀</button>
+      <button type="button" data-action="rotate" aria-label="Girar">⟳</button>
+      <button type="button" data-action="down" aria-label="Descer">▼</button>
+      <button type="button" data-action="drop" aria-label="Derrubar">⤓</button>
+      <button type="button" data-action="right" aria-label="Mover para a direita">▶</button>
+    </nav>
+  </main>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
